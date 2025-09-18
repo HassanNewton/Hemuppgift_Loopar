@@ -4,7 +4,8 @@
     {
         static void Main(string[] args)
         {
-            SumInts();
+            //SumInts();
+            MultiplicationTable();
         }
 
         //Skriv ett C#-program som l¨aser in heltal och summerar dem. 
@@ -27,5 +28,22 @@
 
             Console.WriteLine("summan av talen blir " + sum);
         }
+
+        //        Skriv ett C#-program som ber anv¨andaren att ange ett heltal och skriver ut
+        //multiplikationstabellen f¨or det talet.
+
+        static void MultiplicationTable()
+        {
+            Console.WriteLine("Ange ett heltal för att skriva ut multiplikationstabellen");
+
+            int number = int.Parse(Console.ReadLine());
+
+            for (int i = 1; i < 11; i++)
+            {
+                Console.WriteLine($"{number} * {i} = {number * i}");
+            }
+
+        }
+
     }
 }
