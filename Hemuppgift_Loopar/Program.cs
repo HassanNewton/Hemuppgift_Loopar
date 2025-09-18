@@ -6,7 +6,19 @@
         {
             //SumInts();
             //MultiplicationTable();
-            ListCount();
+            //ListCount();
+            string password = "Hassan123!";
+
+            if (ValidLength(password) && CheckVersal(password) && CheckSpecial(password))
+            {
+                Console.WriteLine("Password är giltigt");
+            }
+            else
+            {
+                Console.WriteLine("Passwrod är ogiltigt");
+            }
+
+
         }
 
         //Skriv ett C#-program som l¨aser in heltal och summerar dem. 
@@ -68,6 +80,62 @@
             Console.WriteLine(count);
         }
 
+        static bool ValidLength(string password)
+        {
+            return password.Length >= 8;
 
+        }
+
+        static bool CheckVersal(string password)
+        {
+            //bool variable = true;
+            //password = "hassan123" --> [H,a,s,s,a,n,...]
+            foreach (char c in password)
+            {
+                if (char.IsUpper(c))
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        static bool CheckSpecial(string password)
+        {
+            string specialCharacters = "!@#$%^&*()-_=+[{]};:’\"|\\,<.>/?";
+
+            foreach (char c in password)
+            {
+                if (specialCharacters.Contains(c))
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        static void LargestNbr()
+        {
+            int[] numbers = { 1, 7, 4, 2, 9, 3 };
+            int largest = numbers[0];
+
+            for (int i = 1; i < numbers.Length; i++)
+            {
+                if (numbers[i] > largest)
+                {
+                    largest = numbers[i];
+                }
+            }
+            Console.WriteLine(largest);
+
+            foreach (int nbr in numbers)
+            {
+                if (nbr > largest)
+                {
+                    largest = nbr;
+                }
+
+            }
+        }
     }
 }
