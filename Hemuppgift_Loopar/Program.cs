@@ -5,7 +5,8 @@
         static void Main(string[] args)
         {
             //SumInts();
-            MultiplicationTable();
+            //MultiplicationTable();
+            ListCount();
         }
 
         //Skriv ett C#-program som l¨aser in heltal och summerar dem. 
@@ -42,8 +43,31 @@
             {
                 Console.WriteLine($"{number} * {i} = {number * i}");
             }
-
         }
+
+        //        Skriv ett program som skapar en lista med 
+        //            siffror och r¨aknar hur m˚anga g˚anger
+        //ett specifikt tal f¨orekommer i listan.
+
+        static void ListCount()
+        {
+            //skapa en lista med siffror
+
+            List<int> list = new List<int> { 1, 2, 3, 4, 5, 6, 7, 3, 4, 3, 4, 2, 4, 5, 6, 7, };
+            int count = 0;
+            int target = 3;
+
+            foreach (int nbr in list)
+            {
+                if (nbr == target)
+                {
+                    count++;
+                }
+            }
+
+            Console.WriteLine(count);
+        }
+
 
     }
 }
